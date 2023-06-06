@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/display_menu_style.css">
+    <link rel="stylesheet" href="../css/global_style.css">
+    <title>Menu</title>
+</head>
+<body>
+    <main>
+        <section>
+            <div class="container">
+                <h2 id="nama"></h2>
+                <div class="gambar" id="gambar">
+                    
+                </div>
+                <div class="deskripsi">
+                    <div class="deskripsi-menu">
+                        <p id="keterangan"></p>
+                    </div>
+                    <!-- <div class="detail-menu">
+                        <p>recommend, spices, favorite, lama</p>
+                    </div> -->
+                </div>
+                <div class="detail">
+                    <p class="harga" id="harga">Rp 0</p>
+                    <div class="pesanan">
+                        <p><b>Qty</b></p>
+                        <p onclick="kurang()" class="btn">&larr;</p>
+                        <input type="number" name="qty" id="qty" class="box-input" onchange="cekValueQty()" onkeypress="if(this.value.length == 2) return false" value="0">
+                        <p onclick="tambah()" class="btn">&rarr;</p>
+                    </div>
+                </div>
+                <div class="keterangan">
+                    <div class="menu-keterangan">
+                        <p><b>Keterangan</b></p><div class="btn" id="button">+</div>
+                    </div>
+                    <div id="textarea-container">
+                        <!-- <textarea name="keterangan" id="keterangan" cols="30" rows="5" class="box-input"></textarea> -->
+                    </div>
+                </div>
+                <div class="submit">
+                    <button type="submit" class="btn-submit" id="btn-submit">tambah</button>
+                    <p class="alert" id="alert"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<!-- <script type="module" src="../js/menu_detail.js" defer></script> -->
+<script type="module" src="../js/fix/menu-detail.js" defer></script>
+<script>
+
+
+    // ==================== DOM Element ====================
+    // textarea
+    const textarea = document.createElement('textarea')
+    textarea.setAttribute('id', 'textarea');
+    textarea.setAttribute('rows', '5');
+    textarea.setAttribute('class', 'box-input')
+
+    // ======================END DOM =========================
+
+    const qty = document.getElementById('qty');
+    let inputValue = document.querySelector("#qty").value
+    let button = document.querySelector('#button')
+
+    const container_textarea = document.getElementById('textarea-container')
+
+    // spawn textarea
+    button.onclick = () => {
+        if(container_textarea.children.length > 0){
+            const textarea = document.getElementById('textarea')
+            textarea.remove()
+            button.innerHTML = '+'
+        }else{
+            button.innerHTML = '-'
+            container_textarea.appendChild(textarea)
+        }
+    }
+
+    const lArrow = document.querySelector('#tambah')
+    const rArrow = document.querySelector('#kurang')
+
+    function cekValueQty(){
+        inputValue = document.querySelector("#qty").value
+    }
+
+    function tambah() {
+        if(inputValue > 98){
+            qty.value = 99
+        }else{
+            qty.value = ++inputValue
+        }
+    }
+
+    function kurang() {
+        if(inputValue <= 0){
+            qty.value = 0
+        }else{
+            qty.value = --inputValue
+        }
+    }
+</script>
+</html>

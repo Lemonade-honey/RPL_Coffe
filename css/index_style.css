@@ -1,0 +1,125 @@
+.thumbnail{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.thumbnail .gambar{
+    max-width: 15rem;
+}.thumbnail .gambar img{
+    width: 100%;
+    height: 11rem;
+}.thumbnail .search{
+    width: 100%;
+}
+#menu{
+    padding-bottom: 0;
+}
+.menu{
+    width: 100%;
+    text-align: right;
+}.menu .my-order{
+    font-size: 1.5rem;
+}.menu .my-order a i{
+    color: #000;
+}
+
+.menu-section{
+    margin-bottom: 1rem;
+}
+.menu-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}.menu-container .menu-card{
+    border: 1px solid var(--main-border-color);
+    flex: 1;
+    border-radius: .5rem;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000;
+    max-width: 10rem;
+}.menu-container .menu-card img{
+    height: 6rem;
+    width: 6rem;
+    border-radius: 1rem;
+}.menu-container .menu-card .deskripsi{
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.menu-container .menu-card:hover{
+    border-color: orange;
+}
+
+/* pop up harga */
+
+/* .pop-up-harga{
+    z-index: 10;
+    position: fixed;
+    left: 3rem;
+    right: 0;
+    top: 93%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}.pop-up-harga .total-harga{
+    border: 1px solid var(--main-border-color);
+    border-radius: .5rem;
+    background: rgb(11, 165, 101);
+    padding: .5rem 1rem;
+    width: 15rem;
+    text-align: right;
+    transform: translateY(-50%);
+    color: #fff;
+    font-weight: 600;
+}.pop-up-harga .total-harga .barang{
+    display: flex;
+    justify-content: space-between;
+} */
+
+.pop-up-harga{
+    position: fixed;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}.pop-up-harga .total-harga{
+    width: 18rem;
+}.pop-up-harga .total-harga .barang{
+    animation-name: pop-up;
+    animation-duration: 2s;
+    background: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    border: 1px solid #000;
+    border-radius: .5rem;
+    padding: .1rem .5rem;
+}.pop-up-harga .total-harga .barang .menu{
+    display: flex;
+    gap: 1rem;
+}.pop-up-harga .total-harga .barang .block{
+    font-weight: bold;
+}
+
+@keyframes pop-up{
+    0%{
+        transform: translateY(50px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+@media(max-width: 500px){
+    .menu-container .menu-card{
+        max-width: 100%;
+    }
+}

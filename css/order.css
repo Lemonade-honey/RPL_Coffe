@@ -1,0 +1,74 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid #000; */
+    padding: .5rem;
+    width: 100%;
+}.container .table{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}.container .table h2{
+    margin-bottom: 1rem;
+}
+
+
+.container .table table{
+    width: 100%;
+    border-collapse: collapse;
+}.container .table table, tr, td, th{
+    border: 1px solid #000;
+}.container .table table td, th{
+    padding: .3rem;
+}.container .table table td:first-child span{
+    font-weight: bold;
+
+}
+.container .table table td:first-child{
+    width: 60%;
+}
+.container .table table td:nth-child(2){
+    width: 2.5rem;
+    text-align: center;
+}.container .table table td:last-child{
+    width: 40%;
+}.container .table table tfoot th:last-child{
+    text-align: left;
+}
+
+.container .image{
+    max-width: 20rem;
+    text-align: center;
+}.container .image img{
+    width: 100%;
+}
+
+.container .table button{
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    color: #fff;
+    font-weight: bold;
+    background: #298bd5;
+    border: 1px solid #298bd5;
+}.container .table button:hover{
+    border-color: orange;
+    opacity: 0.8;
+}
+
+/* my order */
+.container .table .order{
+    width: 100%;
+    margin-bottom: .5rem;
+}
+
+.my-order{
+    width: 100%;
+    border: 1px solid #aaaaaa;
+    border-radius: .5rem;
+    padding: 10px;
+    margin-bottom: 1rem;
+}

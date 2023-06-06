@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/global_style.css">
+    <style>
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-height: 90vh;
+        }.container .img-gif{
+            padding: 1rem;
+        }.container .img-gif img{
+            max-width: 20rem;
+            width: 100%;
+        }.container .text p{
+            text-align: center;
+            font-weight: bold;
+        }.container .form-input{
+            text-align: center; 
+        }
+
+        #animation{
+            display: none;
+        }
+
+        button{
+            margin-top: 1rem;
+            width: 100%;
+            padding: .5rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            background: #203DD1;
+            cursor: pointer;
+        }button:hover{
+            opacity: 0.8;
+        }
+    </style>
+    <title>RPL Coffe</title>
+</head>
+<body>
+    <section>
+        <div class="container" id="animation">
+            <div class="img-gif">
+                <img src="img/coffee-cup.gif" alt="">
+            </div>
+            <div class="text">
+                <p>Table No <span id="number-table">20</span></p>
+                <p>redirect....</p>
+            </div>
+        </div>
+        <div class="container" id="form">
+            <div class="form-input">
+                <p>No Meja</p>
+                <input type="number" name="no-table" id="no-table" class="box-input" onkeypress="if(this.value.length == 2) return false">
+            </div>
+            <div class="form-submit">
+                <button id="submit">Goo</button>
+            </div>
+        </div>
+    </section>
+    <script type="module">
+        import {getCookie, setCookie} from "./js/module/cookie.js"
+
+        const text = document.getElementById('number-table')
+        const animationContainer = document.getElementById('animation')
+        const formContainer = document.getElementById('form')
+
+        const no_table = document.getElementById('no-table')
+        const button = document.getElementById('submit')
+
+
+        // Nomer Meja
+        function getTableNumber() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+
+            const table = urlParams.get('table')
+            return table
+        }
+
+        function cookieCostumer(no_table) {
+            if(getCookie('costumer') == null || getCookie('costumer') == ''){
+                // jika cookie kosong
+                console.log('cookie kosong, buat baru');
+
+                // random key string
+                let randomKey = (Math.random() + 1).toString(36).substring(2);
+                setCookie('costumer', randomKey + "=" + no_table)
+            }else{
+                // console.log(getCookie('costumer') + no_table);
+                setCookie('costumer', getCookie('costumer')+ "=" + no_table)
+            }
+        }
+
+        function countDownRedirect(time = 4) {
+            const count = setInterval(() => {
+                time--
+                console.log(time);
+                if(time <= -1){
+                    clearInterval(count)
+                    // redirect url
+                    console.log('redirec');
+                    window.location.replace('http://127.0.0.1:3000/index.html')
+                }
+                return time
+            }, 1250)
+        }
+
+        // main runner
+        if(getTableNumber() == null || getTableNumber() == ""){
+            // kalo url parameter kosong            
+            button.addEventListener('click', () => {
+                if(no_table.value > 99 || no_table.value <= 0 || no_table.value == ''){
+                    alert('table not found')
+                    no_table.value = ''
+                    return;
+                }else{
+                    // di validatecookie sudah ada func get
+                    cookieCostumer(no_table.value)
+
+                    // display
+                    formContainer.style.display = 'none'
+                    animationContainer.style.display = 'flex'
+                    text.innerHTML = no_table.value
+
+                    // redirect
+                    countDownRedirect()
+                }
+            })
+        }else{
+            // display
+            formContainer.style.display = 'none'
+            console.log(getTableNumber());
+            if(isNaN(getTableNumber())){
+                // redirect absolute
+                window.location.replace('http://127.0.0.1:3000/loading-screen.html')
+            }else{
+                cookieCostumer(getTableNumber())
+                animationContainer.style.display = 'flex'
+                text.innerHTML = getTableNumber()
+
+                // redirect
+                countDownRedirect()
+            }
+        }
+    </script>
+</body>
+</html>

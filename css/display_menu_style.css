@@ -1,0 +1,95 @@
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    border: 1px solid #000;
+    border-radius: .5rem;
+    padding: 1rem;
+    max-width: 40rem;
+}.container h2{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.container .gambar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: .5rem;
+}.container .gambar img{
+    max-width: 20rem;
+    width: 100%;
+    border-radius: .5rem;
+}.container .deskripsi{
+    border-bottom: 1px solid #000;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+.container .detail{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #000;
+    padding-bottom: .5rem;
+    margin-bottom: 1rem;
+}.container .detail .harga{
+    margin-top: .2rem;
+}.container .detail .pesanan{
+    display: flex;
+    justify-content: space-between;
+    width: 10rem;
+    margin-bottom: .5rem;
+}.container .detail .pesanan .btn{
+    cursor: pointer;
+    font-size: .6rem;
+    padding: 0 .7rem;
+    background-color: rgb(99, 155, 234);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5rem;
+    border-color: rgb(99, 155, 234);
+}.container .detail .pesanan .btn:hover{
+    background-color: rgb(81, 127, 191);
+}.container .detail .pesanan input{
+    border-radius: .5rem;
+    text-align: center;
+    width: 2.5rem;
+}.container .keterangan .menu-keterangan{
+    display: flex;
+    gap: .5rem;
+    margin-bottom: .5rem;
+}.container .keterangan .menu-keterangan .btn{
+    background: rgb(99, 155, 234);
+    padding: 0 .5rem;
+    border-radius: .5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}.container .keterangan textarea{
+    resize: none;
+}
+
+.container .submit{
+    text-align: center;
+}
+.container .submit .btn-submit{
+    cursor: pointer;
+    background: rgb(99, 155, 234);
+    color: #fff;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    margin-top: .5rem;
+    text-transform: capitalize;
+}.container .submit .btn-submit:hover{
+    background-color: rgb(81, 127, 191);
+}.container .submit .alert{
+    color: red;
+}
+
+.box.hide{
+    display: none;
+}.box.hide.show{
+    display: block;
+}
