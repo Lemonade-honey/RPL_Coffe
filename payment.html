@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/global_style.css">
+    <style>
+        body{
+            background: var(--main-background-color);
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: rem;
+        }.container .sub-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 1rem;
+            border: 1px solid var(--main-border-color);
+            border-radius: .5rem;
+            background: #fff;
+            padding: 1rem;
+        }h2{
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }.kode-pembayaran, .harga{
+            margin-top: 1rem;
+        }.sub-container a{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="container">
+
+            <div class="sub-container">
+                <div class="judul-container">
+                    <h2>Kode Pembayaran</h2>
+                </div>
+                <div class="svg-qrcode">
+                    <!-- Buat container -->
+                    <div id="qrcode"></div>
+                </div>
+                <div class="kode-pembayaran">
+                    <p><b>2jdjjfasd383</b></p>
+                </div>
+                <div class="harga">
+                    <p>Rp. 200,000</p>
+                </div>               
+            </div>
+
+            <div class="sub-container">
+                <p>Silahkan ke kasir untuk pembayaran</p>
+                <p>atau</p>
+                <a href="#">bayar dengan E-Wallet</a>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    const qrcode = new QRCode(document.getElementById("qrcode"), {
+        text: "http://jindo.dev.naver.com/collie",
+        width: 128,
+        height: 128,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
+</script>
+</html>

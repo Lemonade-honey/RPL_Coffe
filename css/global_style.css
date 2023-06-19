@@ -17,12 +17,12 @@ input::-webkit-inner-spin-button {
     /* transition: all .2s linear; */
     scroll-behavior: smooth;
     list-style: none;
+    font-size: 1rem;
 }
 :root{
     --main-border-color: rgb(194, 194, 194);
+    --main-background-color : #dbe8f566
 }
-
-
 
 /*========= start index style ==========*/
 section{
