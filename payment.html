@@ -50,11 +50,14 @@
                     <div id="qrcode"></div>
                 </div>
                 <div class="kode-pembayaran">
-                    <p><b>2jdjjfasd383</b></p>
+                    <b id="kode-pembayaran">2jdjjfasd383</b>
                 </div>
                 <div class="harga">
-                    <p>Rp. 200,000</p>
-                </div>               
+                    <p id="harga">Rp. 200,000</p>
+                </div>
+                <div class="status">
+                    <b id="status">Wiating</b>
+                </div>            
             </div>
 
             <div class="sub-container">
@@ -65,14 +68,5 @@
         </div>
     </section>
 </body>
-<script>
-    const qrcode = new QRCode(document.getElementById("qrcode"), {
-        text: "http://jindo.dev.naver.com/collie",
-        width: 128,
-        height: 128,
-        colorDark : "#000000",
-        colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.H
-    });
-</script>
+<script type="module" src="js/fix/pembayaranPage.js"></script>
 </html>

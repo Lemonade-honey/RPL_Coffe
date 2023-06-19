@@ -18,7 +18,7 @@ async function getAllMenu(){
     if(response.ok){
         const data = await response.json()
         // fungsi penampilan data ke html
-        // displayLoopingData(data.data)
+        displayLoopingData(data.data)
         console.log(data);
     }
 }
