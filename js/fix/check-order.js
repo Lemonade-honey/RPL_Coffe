@@ -72,13 +72,12 @@ btnSubmit.addEventListener('click', () => {
     }).then((result) => {
         if(result.isConfirmed){
             orderAction()
-            Swal.fire('anjay')
         }
     })
 })
 
 async function orderAction(){
-    // const url = new URL('http://localhost/API/RPL/order.php')
+    // const url = new URL('http://localhost/RPL/order.php')
     const url = new URL('https://rplcoffe.000webhostapp.com/order.php')
     const response = await fetch(url, {
         method: "POST",
@@ -91,7 +90,7 @@ async function orderAction(){
     })
     // const responseMassage = await response.text()
     // console.log(response);
-    if(response.ok && response.status == 201){
+    if(response.ok){
         Swal.fire({
             icon: 'success',
             text: 'Pesananmu sukses dibuat',
