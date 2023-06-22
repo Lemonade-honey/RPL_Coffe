@@ -2,7 +2,7 @@ const queryUrl = window.location.search;
 const paramUrl = new URLSearchParams(queryUrl);
 
 if(paramUrl.get('kode') == null){
-    window.location.replace('index.html')
+    // window.location.replace('index.html')
 }
 
 async function fetchData(){
