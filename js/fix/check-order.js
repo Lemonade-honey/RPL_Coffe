@@ -72,7 +72,6 @@ btnSubmit.addEventListener('click', () => {
     }).then((result) => {
         if(result.isConfirmed){
             orderAction()
-            Swal.fire('anjay')
         }
     })
 })
