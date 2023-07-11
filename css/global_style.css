@@ -41,6 +41,36 @@ section{
     border-color: orange;
 }
 
+nav{
+    position: fixed;
+    width: 100%;
+    z-index: 20;
+    background: #fff;
+}.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem;
+    border-bottom: 1px solid rgba(7, 7, 7, 0.445);
+}.navbar .logo-navbar a{
+    font-size: 1.1rem;
+    color: #000;
+    font-weight: bold;
+}.navbar .menu-navbar{
+    display: flex;
+    gap: .5rem;
+}
+.navbar .menu-navbar a{
+    color: #000;
+}.navbar .logo-navbar a:hover, .navbar .menu-navbar a:hover{
+    color: rgb(69, 233, 156);
+}
+
+
+main{
+    padding-top: 1.5rem;
+}
+
 @media(max-width:768px){
     
 }

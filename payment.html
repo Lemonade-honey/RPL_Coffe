@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Document</title>
     <link rel="stylesheet" href="css/global_style.css">
     <style>
@@ -38,35 +39,61 @@
     </style>
 </head>
 <body>
-    <section>
-        <div class="container">
-
-            <div class="sub-container">
-                <div class="judul-container">
-                    <h2>Kode Pembayaran</h2>
+    <div id="navbar-include"></div>
+    <main>
+        <section>
+            <div class="container">
+    
+                <div class="sub-container">
+                    <div class="judul-container">
+                        <h2>Kode Pembayaran</h2>
+                    </div>
+                    <div class="svg-qrcode">
+                        <!-- Buat container -->
+                        <div id="qrcode"></div>
+                    </div>
+                    <div class="kode-pembayaran">
+                        <b id="kode-pembayaran">2jdjjfasd383</b>
+                    </div>
+                    <div class="harga">
+                        <p id="harga">Rp. 200,000</p>
+                    </div>
+                    <div class="status">
+                        <b id="status">Wiating</b>
+                    </div>            
                 </div>
-                <div class="svg-qrcode">
-                    <!-- Buat container -->
-                    <div id="qrcode"></div>
+    
+                <div class="sub-container">
+                    <p>Silahkan ke kasir untuk pembayaran</p>
+                    <p>atau</p>
+                    <a href="#">bayar dengan E-Wallet</a>
                 </div>
-                <div class="kode-pembayaran">
-                    <b id="kode-pembayaran">2jdjjfasd383</b>
-                </div>
-                <div class="harga">
-                    <p id="harga">Rp. 200,000</p>
-                </div>
-                <div class="status">
-                    <b id="status">Wiating</b>
-                </div>            
             </div>
-
-            <div class="sub-container">
-                <p>Silahkan ke kasir untuk pembayaran</p>
-                <p>atau</p>
-                <a href="#">bayar dengan E-Wallet</a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 </body>
-<script type="module" src="js/fix/pembayaranPage.js"></script>
+<script>
+    // const queryUrl = window.location.search;
+    // const paramUrl = new URLSearchParams(queryUrl);
+    // if(isNaN(paramUrl.get('kode'))){
+    //     // qrcode, CDN
+    //     console.log(paramUrl.get('kode'));
+    //     const htmlKode = document.getElementById('kode-pembayaran')
+    //     htmlKode.innerText = paramUrl.get('kode')
+    //     const qrcode = new QRCode(document.getElementById("qrcode"), {
+    //         text: paramUrl.get('kode'),
+    //         width: 208,
+    //         height: 208,
+    //         colorDark : "#000000",
+    //         colorLight : "#ffffff",
+    //         correctLevel : QRCode.CorrectLevel.H
+    //     });
+    // }else{
+    //     window.location.replace('/')
+    // }
+    fetch('navbar.html').then(response => response.text()).then(data => {
+        document.getElementById('navbar-include').innerHTML = data;
+    });
+</script>
+<script type="module" src="js/fix/pembayaranPage.js" defer></script>
 </html>

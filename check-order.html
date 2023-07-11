@@ -4,35 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/global_style.css">
     <link rel="stylesheet" href="../css/order.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
     <title>Check Order List</title>
 </head>
 <body>
-    <section>
-        <div class="container">
-            <div class="image">
-                <img src="../img/list.gif" alt="">
-                <h3>You haven't ordered anything yet</h3>
-            </div>
-            <div class="table">
-                <h2>Your Order</h2>
-                <table id="table">
-                    <th>Menu</th>
-                    <th>Qty</th>
-                    <th>Total</th>
-                    <tbody id="order-list"></tbody>
-                    <tfoot>
+    <div id="navbar-include"></div>
+    <main>
+        <section>
+            <div class="container">
+                <div class="image">
+                    <img src="../img/list.gif" alt="">
+                    <h3>You haven't ordered anything yet</h3>
+                </div>
+                <div class="table">
+                    <h2>Your Order</h2>
+                    <table id="table">
+                        <th>Menu</th>
+                        <th>Qty</th>
                         <th>Total</th>
-                        <th id="qty-total"></th>
-                        <th id="harga-total"></th>
-                    </tfoot>
-                </table>
-                <button id="submit-btn">Order Now</button>
+                        <tbody id="order-list"></tbody>
+                        <tfoot>
+                            <th>Total</th>
+                            <th id="qty-total"></th>
+                            <th id="harga-total"></th>
+                        </tfoot>
+                    </table>
+                    <button id="submit-btn">Order Now</button>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
     <script type="module" src="../js/fix/check-order.js"></script>
+    <script>
+        fetch('navbar.html').then(response => response.text()).then(data => {
+            document.getElementById('navbar-include').innerHTML = data;
+        });
+    </script>
 </body>
 </html>

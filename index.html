@@ -10,14 +10,8 @@
     <title>Main Menu</title>
 </head>
 <body>
+    <div id="navbar-include"></div>
     <main>
-        <section id="menu">
-            <div class="menu">
-                <div class="my-order">
-                    <a href="my-order.html"><i class="fa-solid fa-clipboard-list"></i></a>
-                </div>
-            </div>
-        </section>
         <section id="makanan">
             <div class="container">
                 <div class="menu-section"><h2>Makanan</h2></div>
@@ -51,7 +45,7 @@
             </div>
         </section>
         
-        <div class="pop-up-harga" id="pop-up">
+        <!-- <div class="pop-up-harga" id="pop-up">
             <a href="http://127.0.0.1:3000/check-order.html" class="total-harga">
                 <div class="barang" id="barang">
                     <div class="menu">
@@ -63,8 +57,13 @@
                     </div>
                 </div>
             </a>
-        </div>
+        </div> -->
     </main>
     <script type="module" src="js/fix/menu.js"></script>
+    <script>
+        fetch('navbar.html').then(response => response.text()).then(data => {
+            document.getElementById('navbar-include').innerHTML = data;
+        });
+    </script>
 </body>
 </html>

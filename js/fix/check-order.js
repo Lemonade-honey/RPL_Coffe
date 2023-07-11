@@ -91,7 +91,7 @@ async function orderAction(){
     })
     // const responseMassage = await response.text()
     // console.log(response);
-    if(response.ok && response.status == 201){
+    if(response.ok){
         Swal.fire({
             icon: 'success',
             text: 'Pesananmu sukses dibuat',

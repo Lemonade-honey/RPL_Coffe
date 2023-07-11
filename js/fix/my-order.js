@@ -11,7 +11,7 @@ if(getCookie('costumer') != null){
 }
 
 async function getOrder(cookie){
-    // const url = new URL(`http://localhost/API/RPL/order/${cookie}`)
+    // const url = new URL(`http://localhost/RPL_API/order/${cookie}`)
     const url = new URL(`https://rplcoffe.000webhostapp.com/order/${cookie}`)
 
     const response = await fetch(url)
@@ -26,7 +26,8 @@ async function getOrder(cookie){
             let container = ml('div', {class: "my-order"}, [
                 ml('div', {class: "order"}, [
                     ml('p', {}, `Meja: ${element.meja}`),
-                    ml('p', {}, `Tanggal: ${element.date}`)
+                    ml('p', {}, `Tanggal: ${element.date}`),
+                    ml('p', {}, `Status:${element.status}`),
                 ]), 
                 ml('table', {id: 'table'}, [
                     ml('thead', {}, [
@@ -42,6 +43,13 @@ async function getOrder(cookie){
                     ])
                 ])
             ])
+            if(element.status == 'waiting'){
+                const link = document.createElement('a');
+                link.setAttribute('href', `/payment.html?kode=${element.kode}`)
+                link.setAttribute('style', 'float:right; padding-top: 10px;')
+                link.innerText = 'Link Bayar';
+                container.append(link)
+            }
             target.append(container)
 
             element.order.forEach(e => {

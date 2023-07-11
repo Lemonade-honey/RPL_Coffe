@@ -5,7 +5,7 @@ if(getCookie('costumer') == null){
     window.location.replace('meja.html')
 }else{
     getAllMenu()
-    getStorage()
+    // getStorage()
 }
 
 
@@ -96,22 +96,22 @@ function displayLoopingData(menuObj){
     }
 }
 
-function getStorage(){
-    const listOrder = window.localStorage.getItem('list-order')
-    const listOrderObj = JSON.parse(listOrder)
+// function getStorage(){
+//     const listOrder = window.localStorage.getItem('list-order')
+//     const listOrderObj = JSON.parse(listOrder)
 
-    let totalHarga = 0
-    if(listOrder != null && listOrderObj.order.length != 0){
-        // console.table(listOrderObj);
-        for(let i =0; i < listOrderObj.order.length; i++){
-            totalHarga += (listOrderObj.order[i].harga * listOrderObj.order[i].qty)
-        }
-        const item = document.getElementById('item')
-        item.innerHTML = (listOrderObj.order.length) + " item"
+//     let totalHarga = 0
+//     if(listOrder != null && listOrderObj.order.length != 0){
+//         // console.table(listOrderObj);
+//         for(let i =0; i < listOrderObj.order.length; i++){
+//             totalHarga += (listOrderObj.order[i].harga * listOrderObj.order[i].qty)
+//         }
+//         const item = document.getElementById('item')
+//         item.innerHTML = (listOrderObj.order.length) + " item"
 
-        const harga = document.getElementById('total-harga')
-        harga.innerHTML = "Rp. " +  new Intl.NumberFormat().format(totalHarga)
-    }else{
-        document.getElementById('barang').style.display = 'none'
-    }
-}
+//         const harga = document.getElementById('total-harga')
+//         harga.innerHTML = "Rp. " +  new Intl.NumberFormat().format(totalHarga)
+//     }else{
+//         document.getElementById('barang').style.display = 'none'
+//     }
+// }
