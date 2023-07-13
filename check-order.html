@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/global_style.css">
-    <link rel="stylesheet" href="../css/order.css">
+    <link rel="stylesheet" href="css/global_style.css">
+    <link rel="stylesheet" href="css/order.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
     <title>Check Order List</title>
 </head>
@@ -16,7 +16,7 @@
         <section>
             <div class="container">
                 <div class="image">
-                    <img src="../img/list.gif" alt="">
+                    <img src="img/list.gif" alt="">
                     <h3>You haven't ordered anything yet</h3>
                 </div>
                 <div class="table">
@@ -37,7 +37,7 @@
             </div>
         </section>
     </main>
-    <script type="module" src="../js/fix/check-order.js"></script>
+    <script type="module" src="js/fix/check-order.js"></script>
     <script>
         fetch('navbar.html').then(response => response.text()).then(data => {
             document.getElementById('navbar-include').innerHTML = data;

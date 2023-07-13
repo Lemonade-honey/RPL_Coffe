@@ -70,7 +70,7 @@ async function getOrder(cookie){
     }else{
         const image = ml('div', {class: "image"}, [
             ml(),
-            ml('img', {src: "../img/list.gif"}, ),
+            ml('img', {src: "img/list.gif"}, ),
             ml('h3', {}, "You haven't ordered anything yet")
         ])
 
